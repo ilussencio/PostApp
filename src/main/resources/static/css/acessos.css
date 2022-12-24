@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Jockey+One&display=swap');
+/* font-family: 'Inder',
+sans-serif;
+font-family: 'Jockey One',
+sans-serif; */
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    background: linear-gradient(180deg, rgba(70, 92, 122, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+main {
+    height: 80%;
+    gap: 12px;
+}
+
+.box-login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: 'Inder', sans-serif;
+    width: 450px;
+    max-width: 90%;
+    height: 450px;
+    max-height: 70vh;
+    background-color: #000;
+    border: 2px solid #6A51C5;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.login-title {
+    padding: 50px 0 0 50px;
+    color: #6A51C5;
+    font-weight: bold;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px 0 50px;
+    gap: 60px;
+    font-family: 'Inder', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    outline: none;
+}
+
+input[type="submit"], input[type="button"] {
+    background-color: #443091;
+    padding: 10px;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    color: #fff;
+}
+
+input:is([type="text"], [type="password"], [type="tel"]) {
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-bottom: 2px solid #443091;
+}
+
+input:is([type="text"], [type="password"], [type="tel"])::placeholder {
+    font-style: italic;
+    color: #5e5e5e;
+}
+
+input:is([type="text"], [type="password"], [type="tel"]):focus {
+    border-bottom: 2px solid #6A51C5;
+}
+
+.register-message {
+    font-family: 'Jockey One', sans-serif;
+}
+
+.link {
+    color: #443091;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.box-register {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inder', sans-serif;
+    gap: 8px;
+    width: 450px;
+    max-width: 90%;
+    height: 600px;
+    max-height: 80vh;
+    background-color: #000;
+    border: 2px solid #6A51C5;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.access-title {
+    font-size: 38px;
+    padding: 50px 0 0 50px;
+    color: #6A51C5;
+    font-weight: bold;
+}
+
+.register-form {
+    font-family: 'Inder', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px 0 50px;
+    gap: 40px;
+    width: 100%;
+    height: 100%;
+}
+
+.msg-error {
+    color: red;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.login-message {
+    font-family: 'Jockey One', sans-serif;
+}
+
+.logo {
+    width: 90px;
+    height: 70px;
+    margin: auto;
+}
+
+.box-logo {
+    padding: 10px 40px;
+}
+header{
+    display: flex;
+    justify-content: flex-end;
+}
+  

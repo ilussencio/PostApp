@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Jockey+One&display=swap');
+
+* {
+    font-family: 'Inder', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #000;
+  padding: 0.1rem;
+}
+
+.btn-register-header {
+  font-family: 'Inder', sans-serif;
+  background-color: #6A51C5;
+  border: none;
+}
+
+.btn-login-header {
+  font-family: 'Inder', sans-serif;
+}
+
+.btn-register-header:hover {
+  background-color: #443091;
+  color: white !important;
+}
+
+.btn-login-header:hover {
+  color: #000 !important;
+}
+
+.boxHeader{
+  display: flex;
+  width: 100%;
+}
+
+.box-logo {
+  padding: 10px 40px;
+}
+
+.logo {
+  align-self: center;
+  width: 90px;
+  height: 70px;
+  margin: auto;
+}
+
+.box-user-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.user-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+
+.btn-edit-user-pic {
+  position: absolute;
+  background-color: #443091;
+  right: 0;
+  bottom: 0;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 100vw;
+}
+
+.username {
+  color: #fff;
+  font-size: 20px;
+}
+
+.user-info{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 50px;
+}
+
+.btn-register {
+  font-family: 'Inder', sans-serif;
+  background-color: #6A51C5;
+  border: none;
+}
+
+.btn-register:hover {
+  background-color: #443091;
+  color: white !important;
+}
+
+.btn-register:disabled {
+  background-color: #BAAFE4;
+}

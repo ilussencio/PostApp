@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html th:include="template :: modelo">
+
+<body>
+    <div th:fragment="conteudo" class="container-lg">
+        
+    <link rel="stylesheet" th:href="@{/css/posts.css}">
+
+        <div class="row">
+            <div class="col-1">
+                <!-- MENU LATERIAL -->
+                <div th:replace="barra :: barra"></div>
+            </div>
+
+            <div class="col-11 row align-items-start">
+                <!-- POST -->
+                <div class="col-lg-9">
+                    <!-- CABEÇALHO DO ARTIGO -->
+                    <div class="cabecalho">
+                        <h1 class="titulo" th:text="${post.titulo}"></h1>
+                        <h1 id="id_post" th:text="${post.id}" style="display: none"></h1>
+                        <h2 class="subtitulo" th:text="${post.subtitulo}"></h2>
+                        <p class="data d-flex align-items-center">
+                            <img th:src="@{/img/calendar.png}" />
+                            <label id="data" th:text="${#temporals.format(post.create_data, 'dd/MM/yyyy')}"> </label>
+                        </p>
+                    </div>
+
+                    <hr>
+                    <!-- CATEGORIAS -->
+                    <div class="d-flex flex-row flex-wrap">
+                        <div class="p-2" th:each="categoria:${categorias}">
+                            <a th:href="'../home?find='+${categoria.nome}">
+                                <button type="button" class="btn btn-sm btn-category" th:text="${categoria.nome}"></button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- POSTAGEM (ADICIONADO DINAMICAMENTE PELO THYMELEAF) -->
+                    <div class="body_post" th:utext="${post.corpo}"></div>
+
+                    <hr>
+
+                    
+                    <!-- COMENTARIO (INSERIR COMENTARIO) -->
+                    <div class="d-flex flex-column mt-3 mb-3">
+                        <div class="form-floating mb-2">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                                style="height: 100px" name="text_comment" onchange="commentCont()"
+                                onkeydown="commentCont()"></textarea>
+                            <label for="floatingTextarea2">Deixe um comentario:</label>
+                        </div>
+                        <p class="fs-6 mb-2">Resta <label id="comment_cont">255</label> caracteres!</p>
+                        <p id="comment_error"></p>
+                        <button class="btn btn-outline-light btn-register" id="comment_button" onclick="addComment()"
+                            disabled>Adicionar Comentario</button>
+                    </div>
+
+                    <!-- COMENTARIO (ADICIONADO DINAMICAMENTE COM JAVA SCRIPT) -->
+                    <div id="comments"></div>
+                    <hr>
+                    <!-- SUGESTAO DE LEITURA -->
+                    <div class="row justify-content-center gap-1 mb-3">
+                        <div th:each="sugestao : ${sugestao}" class="col-md-3 card">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <h5 class="card-title" th:text="${sugestao.titulo}"></h5>
+                                <p class="card-text" th:text="${sugestao.subtitulo}"></p>
+                                <p class="card-text" th:text="${#temporals.format(post.create_data, 'dd/MM/yyyy')}"></p>
+                                <a th:href="@{'/post/'+${sugestao.id}}" class="btn btn-outline-light btn-register btn-card">Ler artigo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- AUTOR -->
+                <!-- MENU LATERIAL -->
+                <div class="autor col-lg-3">
+                    <img th:src="${usuario.foto}" />
+                    <p th:text="${usuario.nome}"></p>
+                    <div>
+                        <a th:href="@{'/usuario/'+${usuario.username}}" th:text="${usuario.username}"></a>
+                    </div>
+
+                    <a th:href="@{'/usuario/'+${usuario.username}}" >
+                        <button type="button" class="btn btn-outline-light btn-register" >Visitar Perfil</button>
+                    </a>
+
+                    <div th:each="postagems : ${postagems}" class="card card-left m-2">
+                        <div class="card-body d-flex flex-column gap-2 justify-content-between">
+                            <h5 class="card-title" th:text="${postagems.titulo}"></h5>
+                            <p class="card-text" th:text="${postagems.subtitulo}"></p>
+                            <a th:href="@{'/post/'+${postagems.id}}"
+                                class="btn btn-outline-light btn-register btn-card">Ler artigo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script th:src="@{/js/comment.js}"></script>
+    </div>
+</body>
+
+</html>

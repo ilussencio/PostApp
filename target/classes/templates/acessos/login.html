@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html th:include="acessos/template :: acesso_modelo">
+
+<body>
+    <main class="d-flex flex-column justify-content-center align-items-center" th:fragment="conteudo">
+        <div class="box-login">
+            <h2 class="access-title">Login</h2>
+            <form th:action="@{/login}" method="post" class="login-form">
+                <fieldset>
+                    <input type="text" id="user" name="username" class="w-100" placeholder="Usuário">
+                </fieldset>
+                <fieldset>
+                    <input type="password" id="pwd" name="password" class="w-100" placeholder="Senha">
+                </fieldset>
+                <input type="submit" value="Entrar" class="w-50">
+            </form>
+        </div>
+        <p class="register-message">Ainda não possui cadastro? <a href="cadastro" class="link">Clique aqui para fazer
+                parte!</a></p>
+    </main>
+</body>
+
+</html>

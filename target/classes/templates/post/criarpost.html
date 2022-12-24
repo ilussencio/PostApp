@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:include="template :: modelo">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostApp</title>
+</head>
+
+<body>
+  <main th:fragment="conteudo">
+    <link rel="stylesheet" href="/css/post.css">
+
+    <form th:action="@{/criarpost}" method="POST" th:object="${post}" class="container row ">
+      <div class="col-1">
+        <div th:replace="barra :: barra"></div>
+      </div>
+      
+
+      <div class="col-11">        
+        <div>
+          <h1>CRIAR POST</h1>
+        </div>       
+
+        <!--caixas de texto-->
+        <div>
+          <input type="text" th:id="id_usuario.id" th:name="id_usuario.id" th:value="${userlog.id}" style="display: none;">
+          <input type="text" th:id="id_usuario.nome" th:name="id_usuario.nome"  style="display: none;">
+          
+          <label for="title" class="form-label">Titulo</label>
+          <input type="text" class="form-control" id="title" th:field="*{titulo}" required> 
+          
+          <label for="subtitle" class="form-label">SubTitulo</label>
+          <input type="text" class="form-control" id="subtitle" th:field="*{subtitulo}" required> 
+          
+          <label for="subtitle" class="form-label">Categorias</label>
+          <br>
+          
+          <div th:each="categorias:${categorias}" class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="checkbox" onclick="selectCategory(this)" class="btn-check" th:id="${categorias.id}" th:value="${categorias.id}"  autocomplete="off">
+            <label class="btn btn-outline-primary" th:for="${categorias.id}" th:text="${categorias.nome}"></label>
+          </div>
+          <br>
+          <label class="form-label">Artigo</label>
+          <!-- </script> -->
+          <div>
+            <textarea id="tiny" th:field="*{corpo}"></textarea>
+          </div>
+          <!--botão postar-->
+          <input type="submit" onclick="send()" value="Postar" class="botão">
+        </div>
+      </div>
+    </from>
+
+    <script src="https://cdn.tiny.cloud/1/xrmkjerjj1h26t825dg9qbb2rck22d53v1t472r77qda59w4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    </script>
+    <script th:src="@{/js/button.js}"></script>
+  </main>
+
+</body>
+
+</html>

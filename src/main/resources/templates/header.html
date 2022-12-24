@@ -1,0 +1,38 @@
+<div class="boxHeader" th:fragment="header">
+
+    <img th:src="@{/img/logo-preto.png}" alt="Logo do PostApp" class="logo">
+
+
+    <nav id="user-info" class="user-info" sec:authorize="!isAuthenticated()">
+        <a href="/cadastro"><button class="btn btn-outline-light btn-register">Cadastre-se</button></a>
+        <a href="/login"><button class="btn btn-outline-light btn-login">Entrar</button></a>
+    </nav>
+
+    <nav id="user-info" class="user-info" sec:authorize="isAuthenticated()">
+        <span class="username" th:text="${userlog.nome}"></span>
+
+
+        <li style="list-style: none;">
+            <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                <img class="user-pic" th:src="${userlog.foto}">
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" th:href="'../usuario/' + ${userlog.username}">Minhas Postagens</a></li>
+                <li><a class="dropdown-item" href="../criarpost">Fazer uma postagem</a></li>
+                <li><a class="dropdown-item" href="../perfil">Perfil</a></li>
+                <li><a class="dropdown-item" href="../home">Inicio</a></li>
+                
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item" href="#">
+                        <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+                            <input style="background: none; border: none;" type="submit" value="Sair" />
+                        </form>
+                </a></li>
+            </ul>
+        </li>
+
+    </nav>
+</div>

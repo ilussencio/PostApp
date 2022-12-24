@@ -1,0 +1,42 @@
+
+<html th:include="acessos/template :: acesso_modelo">
+
+<body>
+    <main class="d-flex flex-column justify-content-center align-items-center" th:fragment="conteudo">
+        <div class="box-register">
+            <h2 class="access-title">Cadastro</h2>
+            <form th:action="@{/cadastro}" method="post" class="register-form" th:object="${user}">
+                <fieldset>
+                    <input type="text" name="nome" id="nome" onkeypress="removeMsg('msg-nome')" class="w-100"
+                        placeholder="Nome" th:field="*{nome}">
+                    <span class="msg-error msg-nome"></span>
+                </fieldset>
+                <fieldset>
+                    <input type="text" name="user" id="user" onkeypress="removeMsg('msg-user')" class="w-100"
+                        placeholder="Usuário" th:field="*{username}">
+                    <span class="msg-error msg-user"></span>
+                </fieldset>
+                <fieldset>
+                    <input type="text" name="email" id="email" onkeypress="removeMsg('msg-email')" class="w-100"
+                        placeholder="Email" th:field="*{email}">
+                    <span class="msg-error msg-email"></span>
+                </fieldset>
+                <fieldset>
+                    <input type="password" name="senha" id="senha" class="w-100" onkeypress="removeMsg('msg-senha')"
+                        placeholder="Senha" th:field="*{senha}">
+                    <span class="msg-error msg-senha"></span>
+                </fieldset>
+                <fieldset>
+                    <input type="tel" name="telefone" id="telefone" class="w-100" placeholder="Telefone"
+                        onkeypress="inserirMascara('telefone','(99)99999-9999');removeMsg('msg-telefone');"
+                        th:field="*{telefone}">
+                    <span class="msg-error msg-telefone"></span>
+                </fieldset>
+                <input type="button" value="Cadastrar" onclick="validateForm()" class="w-50">
+            </form>
+        </div>
+        <p class="login-message">Já é cadastrado? <a href="login" class="link">Faça seu login aqui</a></p>
+    </main>
+</body>
+
+</html>

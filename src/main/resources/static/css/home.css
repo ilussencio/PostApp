@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Jockey+One&display=swap');
+
+* {
+    font-family: 'Inder', 'Times New Roman', Times, serif;
+}
+
+h3 {
+    font-family: 'Jockey One', sans-serif;
+    padding: 10px;
+    text-align: center;
+    margin: 70px 0px 0px 0px;
+    font-size: 36px;
+}
+
+P{
+    text-align: center;
+}
+.share {
+    background-image: url('../img/share.png');
+    background-repeat: no-repeat;
+    background-position: center right 120px;
+}
+
+.search {
+    background-image: url('../img/search.png');
+    background-repeat: no-repeat;
+    background-position: center right 150px;
+}
+.btn-category {
+    background-color: black;
+    border-color: #6A51C5;
+    color: #BAAFE4;
+    font-weight: bold;
+}
+
+.btn-category:hover {
+    background-color: #6A51C5;
+    color: white;
+}
+
+
+.btn-purple{
+
+    background-color: #DDA6FF;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 30px 0px;
+}
+
+.btn-purple:hover{
+
+    background-color: white;
+    border: 2px dashed #DDA6FF;
+}
+
+.btn-purple > a{
+
+    color: black;
+    font-weight:bolder;
+    font-size: 20px;
+}
+
+
+#button-search {
+    background-image: url('../img/search.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    padding: 20px;
+}
+
+.results {
+    background-color: black;
+    width: 20%;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 10px 10px 12px gray;
+    margin: 40px;
+}
+
+.by {
+
+    color: lightslategray;
+}
+
+.title {
+
+    color: #BAAFE4;
+    font-family: 'Jockey One';
+    font-size: 24px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.author {
+    font-size: 16px;
+    color: white;
+}
+
+
+p {
+    font-size: 18px;
+}
+
+.msgError{
+    font-size: 18px;
+    margin: 20px;
+    color: red;
+}
+
+@media only screen and (max-width: 600px) {
+    .results {
+        width: 300px;
+        margin-top: 10px;
+    }
+
+    .share {
+        background-position: center right 40px;
+    }
+
+    .search {
+        background-position: center right 40px;
+    }
+
+    img{
+      width: 80%;
+    }
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+
+    .results {
+        width: 50%;
+        margin-top: 10px;
+    }
+
+    .share {
+        background-position: center right 20px;
+    }
+
+    .search {
+        background-position: center right 20px;
+    }
+
+
+
+}

@@ -1,0 +1,172 @@
+a {
+  color: #443091;
+}
+.titulo {
+  font-family: 'Jockey One', sans-serif;
+  font-weight: bold;
+  font-size: 70px;
+  color: #443091;
+}
+
+.subtitulo {
+  font-size: 32px;
+}
+
+.autor {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center;
+  gap: 10px;
+  font-size: 25px;
+  padding-top: 50px;
+}
+
+.autor a {
+  color: #6A51C5;
+}
+
+.autor img {
+  width: 200px;
+  border-radius: 20px;
+  border: 5px solid #443091;
+}
+
+.autor > p {
+  text-align: center;
+}
+.card {
+  width: 250px;
+}
+.card-left {
+  width: 250px
+}
+
+.card-title {
+  text-align: center;
+  font-size: 25px;
+}
+
+.card-text {
+  text-align: center;
+  font-size: 15px;
+}
+
+.card a {
+  color: #fff;
+}
+
+.data>label {
+
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.btn-category {
+  background-color: black;
+  border-color: #6A51C5;
+  color: #BAAFE4;
+  font-weight: bold;
+}
+
+.btn-category:hover {
+  background-color: #6A51C5;
+  color: white;
+}
+
+.btn-register {
+  font-family: 'Inder', sans-serif;
+  background-color: #6A51C5;
+  border: none;
+}
+
+.btn-register:hover {
+  background-color: #443091;
+  color: white !important;
+}
+
+.btn-register:disabled {
+  background-color: #BAAFE4;
+}
+
+.btn-login {
+  font-family: 'Inder', sans-serif;
+}
+
+.btn-login:hover {
+  color: #000 !important;
+}
+
+.comment {
+  padding: 10px;
+}
+
+.comment_name:hover {
+  cursor: pointer;
+  color: #6A51C5;
+}
+
+.comment_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 2px solid #443091;
+  padding: 0px;
+}
+
+.comment_name {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.comment_text {
+  border-left: 2px solid #BAAFE4;
+  padding-left: 5px;
+}
+
+.body_post>div {
+  padding: 15px 0px;
+}
+
+.paragrafo p {
+  letter-spacing: 1px;
+  line-height: 1.5em;
+  font-size: 1.1em;
+}
+
+.citacao {
+  background-color: #BAAFE4;
+  padding: 25px 50px !important;
+  line-height: 1.5em;
+  color: black;
+  border-radius: 20px;
+}
+
+.imagem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.imagem img {
+  width: 300px;
+}
+
+.imagem label {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.subtitulo p {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.p-small {
+  font-size: 13px;
+  color: gray;
+  margin-top: 5px;
+}

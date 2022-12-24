@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html th:include="template :: modelo">
+
+<body>
+    <div th:fragment="conteudo">
+        <style>
+            .userPhoto{
+                width: 200px;
+                border-radius: 20px;
+                border: 5px solid #443091;
+            }
+
+            .card {
+                width: 300px;
+            }
+
+            .card-title {
+                text-align: center;
+                font-size: 25px;
+            }
+
+            .card-text {
+                text-align: center;
+                font-size: 15px;
+            }
+
+            .card a {
+                color: #fff;
+            }
+            .btn-register {
+                font-family: 'Inder', sans-serif;
+                background-color: #6A51C5;
+                border: none;
+            }
+
+            .btn-register:hover {
+                background-color: #443091;
+                color: white !important;
+            }
+
+            .btn-register:disabled {
+                background-color: #BAAFE4;
+            }
+            .name{
+                font-size: 20px;
+                font-weight: bold;
+                margin-top: 20px;
+                color: #443091;
+            }
+            .autor{
+                text-align: center;
+            }
+            .btn-delete{
+                background-color: rgb(233, 81, 81);
+                color:rgb(44, 44, 44);
+                width: 100%;
+            }
+            .btn-delete:hover{
+                background-color: rgb(245, 130, 130);
+            }
+        </style>
+        <div class="container">
+            <div class="row m-4 justify-content-center">
+                <div class="col-md-4 autor ">
+                    <img class="userPhoto" th:src="${usuario.foto}">
+                    <p class="name mb-2" th:text="${usuario.nome}"></p>
+                    <p class="mb-2">Telefone: <lable th:text="${usuario.telefone}"></lable></p>
+                    <p class="mb-2">E-mail: <label th:text="${usuario.email}"></label></p>
+                    <p class="mb-2">Usuario: <label th:text="${usuario.username}"></label></p>
+                </div>
+                <div class="col-md-8 row posts">
+                    <div th:each="postagems : ${postagems}" class="card m-1">
+                        <div class="card-body d-flex flex-column gap-2 justify-content-between">
+                            <h5 class="card-title" th:text="${postagems.titulo}"></h5>
+                            <p class="card-text" th:text="${postagems.subtitulo}"></p>
+                            <p class="card-text" th:text="${#temporals.format(postagems.create_data, 'dd/MM/yyyy')}"></p>
+                            <a th:href="@{'/post/'+${postagems.id}}"
+                                class="btn btn-outline-light btn-register">Ler artigo</a>
+
+                            <form 
+                                action="../delete-post"
+                                sec:authorize="isAuthenticated()" 
+                                th:style="${userlog.username == usuario.username ? 'display:block' : 'display:none'}">
+
+                                <input type="text" name="id" th:value="${postagems.id}" style="display:none">
+
+                                <input type="submit" value="Deletar" class="btn btn-outline-light btn-delete">
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

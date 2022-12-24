@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:include="template :: modelo">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostApp</title>
+</head>
+
+<body>
+
+  <main th:fragment="conteudo" class="container">
+
+    <script src="/js/findPost.js"></script>
+    <link rel="stylesheet" href="/css/home.css">
+    <div class="row">
+      <div th:replace="barra :: barra"></div>
+
+      <div class="col-md-10">
+        <section class="row border-bottom">
+          <div class="col-md-6 col-sm-12">
+            <div>
+              <h3 class="share">Compartilhe</h3>
+              <p>O que você está pensando?</p>
+            </div>
+
+            <div>
+              <h3 class="search">Busque</h3>
+              <p>O que você está querendo aprender?</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+
+            <div class="d-flex justify-content-center">
+              <img th:src="@{/img/woman.png}" alt="Mulher analisando mural" height="340">
+            </div>
+          </div>
+        </section>
+
+        <div class="row">
+
+          <section class="mt-3">
+            <h2 class="m-3 fs-2">Principais Categorias:</h2>
+            <div class="mt-5 d-flex justify-content-start flex-wrap gap-2">
+              <a href="/home?find=html" class="btn btn-sm btn-category">Html</a>
+              <a href="/home?find=Desenvolvimento" class="btn btn-sm btn-category">Desenvolvimento</a>
+              <a href="/home?find=javascript" class="btn btn-sm btn-category">JavaScript</a>
+              <a href="/home?find=css" class="btn btn-sm btn-category">CSS</a>
+              <a href="/home?find=java" class="btn btn-sm btn-category">Java</a>
+            </div>
+          </section>
+
+
+          <section class="d-flex flex-column mt-5">
+            <h1 class="text-center p-5 mt-3 mb-5">O que você esta procurando?</h1>
+            <!-- <input type="search" name="" id="pesquisa" class="p-3 w-50 m-auto"> -->
+            <div class="input-group mb-3 w-75 m-auto">
+              <input type="seach" class="form-control p-3 fs-3" placeholder="Pesquise" aria-label="Pesquise"
+                aria-describedby="button-search" id="textFind" onchange="find()">
+              <button class="btn btn-outline-secondary" type="button" onclick="find()" id="button-search"></button>
+            </div>
+          </section>
+
+          <section class="d-flex justify-content-evenly flex-wrap" id="result">
+            
+            
+          </section>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+ 
+</body>
+
+</html>

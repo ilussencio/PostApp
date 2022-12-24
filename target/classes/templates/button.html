@@ -1,0 +1,31 @@
+<div th:fragment="button" class="divBtn">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <div class="button">
+    <div>
+      <span onclick="statusVerification()" id="btnAdd">+</span>
+    </div>
+  </div>
+
+  <div id="postOptions" class="hidden options">
+
+    <div>
+      <details>
+        <summary><span class="titleOptions">Texto</span></summary>
+        <div class="icons">
+          <i class="material-icons bi bi-paragraph"></i>
+          <i class="material-icons bi bi-type-italic" onclick="italic()"></i>
+          <i class="material-icons bi bi-type-bold" onclick="bold()"></i>
+        </div>
+      </details>
+    </div>
+    <div>
+      <span class="titleOptions">Imagem</span>
+    </div>
+    <div>
+      <span class="titleOptions">Código</span>
+    </div>
+
+    <script th:src="@{/js/button.js}"></script>
+  </div>
+</div>
